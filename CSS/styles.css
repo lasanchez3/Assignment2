@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE STYLES */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    position:relative
+}
+
+/* HEADER & NAVIGATION */
+header {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.5s ease;
+    font-size: 1em;
+    padding: 10px 15px;
+    margin: 0 auto;
+}
+
+nav a:hover {
+    color: #FFD300;
+}
+
+/* LOGO */
+.logo {
+    display: block;
+    margin: 0 auto 40px;
+    margin-top: 200px;
+    max-width: 100vh;
+    height: auto;
+    content: url('../assets/Pac_man_logo.png');
+    
+    
+}
+
+/* ANIMATION CONTAINERS */
+.animation-container {
+    position: relative;
+    height: 100px;
+    margin: 40px auto;
+    margin-bottom: 20px;
+    background-color: #000; 
+}
+
+/* HOME SECTION ANIMATION */
+#home .pacman {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/Pacman.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20px;
+    left: 1760px;
+    animation: pacmanMoveLeftLoop 4s linear infinite, pacmanMouth 0.1s steps(2) infinite;
+    transform: scaleX(-1);
+    
+}
+
+#home .ghost {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#home .blinky{ background-image: url('../assets/Blinky.png'); left: 1820px; animation: ghostMoveLeftLoop 4s linear infinite; }
+#home .pinky { background-image: url('../assets/Pinky.png'); left: 1880px; animation: ghostMoveLeftLoop 4s linear infinite; }
+#home .inky { background-image: url('../assets/Inky.png'); left: 1940px; animation: ghostMoveLeftLoop 4s linear infinite; }
+#home .clyde { background-image: url('../assets/Clyde.png'); left: 2000px; animation: ghostMoveLeftLoop 4s linear infinite; }
+
+@keyframes pacmanMoveLeftLoop {
+    0% { transform: translateX(0) scaleX(-1); }
+    100% { transform: translateX(-2000px) scaleX(-1); }
+  }
+  
+  @keyframes ghostMoveLeftLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-2000px); }
+  } 
+
+  @keyframes pacmanMouth {
+    0%, 100% { background-image: url('../assets/Pacman.png'); }
+    50% { background-image: url('../assets/Pacman_2.png'); }
+  }
+
+  /* INSERT COIN TEXT */
+.insert-coin {
+    font-size: 1.5em;
+    margin: 40px 0;
+    color: #F9ED3F;
+    animation: blink 2s infinite;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; } 
+    50%, 100% { opacity: 0; }
+}
+
+/* HIGH SCORES SECTION */
+#high-scores {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+    align-items: center;
+    max-height: 800px;
+
+}
+
+#high-scores h2 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#high-scores .high-scores-ready {
+    color: #F9ED3F;
+    font-size: 2.0em;
+    margin: 0 0 20px 0;
+}
+
+#high-scores table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 1.5em;
+}
+
+#high-scores th {
+    color: #ffffff;
+    padding: 15px 8px;
+    text-align: center;
+}
+
+#high-scores td {
+    padding: 5px 8px;
+    text-align: center;
+}
+
+/* STYLE COLORS SCORES */
+  tr:nth-child(1) {
+    color: #ffa002; 
+  }
+  tr:nth-child(2) { 
+    color: #ff0401; 
+  }
+  
+  tr:nth-child(3) { 
+    color: #01f8f8; 
+  }
+  
+  tr:nth-child(4) { 
+    color: #ff60b0;
+  }
+  
+  tr:nth-child(5) {
+    color: #ffa002; 
+  }
+
+  tr:nth-child(6) {
+    color: #ff0401; 
+  }
+
+  tr:nth-child(7) { 
+    color: #01f8f8; 
+  }
+
+tr:nth-child(8) { 
+    color: #ff60b0;
+}
+
+tr:nth-child(9) { 
+    color: #ffa002; 
+}
+
+tr:nth-child(10) { 
+    color: #ff0401;
+}
+  
+#how-to-play p {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+#how-to-play p::first-line {
+    color: #FFFF00;
+    text-transform: uppercase;
+}
+
+/* HOW TO PLAY SECTION */
+#how-to-play {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+#how-to-play h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 40px;
+}
+
+#how-to-play p {
+    color: #ffffff;
+    max-width: 900px;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#how-to-play p::first-line {
+    color: #FFFF00;
+    text-transform: uppercase;
+}
+
+#how-to-play .animation-container-reverse{
+    position: relative;
+    height: 80px;
+}
+
+/* HOW TO PLAY ANIMATION SECTION */
+#how-to-play .pacman {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/Pacman.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20px;
+    left: -750px;
+    animation: pacmanMoveRightLoop 4s linear infinite, pacmanMouth 0.1s steps(2) infinite;
+}
+
+#how-to-play .eaten-ghost-1, .eaten-ghost-2, .eaten-ghost-3, .eaten-ghost-4 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    background-image: url('../assets/Eaten.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.eaten-ghost-1 { left: -510px; animation: ghostMoveRightLoop 4s linear infinite; }
+.eaten-ghost-2 { left: -570px; animation: ghostMoveRightLoop 4s linear infinite; }
+.eaten-ghost-3 { left: -630px; animation: ghostMoveRightLoop 4s linear infinite; }
+.eaten-ghost-4 { left: -690px; animation: ghostMoveRightLoop 4s linear infinite; }
+
+@keyframes pacmanMoveRightLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(2200px); }
+}
+
+@keyframes ghostMoveRightLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(2200px); }
+}
+
+@keyframes pacmanMouth {
+    0%, 100% { background-image: url('../assets/Pacman.png'); }
+    50% { background-image: url('../assets/Pacman_2.png'); }
+  }
+
+
+/* PLAYERS SECTION */
+#players-section {
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .players-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .players-header {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  
+  .player-row {
+    margin-bottom: 10px;
+  }
+  
+  .player-info img {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  
+  .player-info {
+    white-space: nowrap;
+    font-size: 1.5em;
+    padding: 20px 0;
+  }
+  
+  /* STYLE COLOR PLAYERS */
+  .player-row:nth-of-type(3) .player-info {
+    color: #ff0401;
+  }
+  
+  .player-row:nth-of-type(4) .player-info {
+    color: #ff60b0;
+  }
+  
+  .player-row:nth-of-type(5) .player-info  {
+    color: #01f8f8;
+  }
+  
+  .player-row:nth-of-type(6) .player-info  {
+    color: #ffa002;
+  }
+
+  .points-row {
+    margin-top: 20px;
+    font-size: 1.5em;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+    .points-row img {
+        margin: 0 5px;
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+        animation: ghostBlinkOverlay 2s infinite;;
+    }
+
+    @keyframes ghostBlinkOverlay {
+        0%, 50%, 100% {
+          opacity: 0;
+        }
+        25%, 75% {
+          opacity: 1;
+        }
+      }
+
+  .points-row-big {
+    margin-top: 20px;
+    font-size: 1.3em;
+    padding: 5px 0;
+  }
+
+  .points-row-small {
+    margin-top: 20px;
+    font-size: 1.1em;
+    padding: 10px 0;
+  }
+  
+  .points-row-big .dot {
+    font-size: 3.0em;
+    margin-bottom: 10px;
+    color: #ffd300;
+  }
+ .points-row-small .dot {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffd300;
+    }
+
+  .points-row img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  
+/* SECTION DIVIDERS */
+section:not(#players-section):after {
+    content: "";
+    display: block;
+    border-top: 4px dotted #ffd300;
+    margin: 50px auto;
+    max-width: 1800px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #c4c4c4;
+    margin-top: 40px;
+    width: 100%;
+    padding: 20px 0;
+}
